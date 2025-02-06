@@ -47,15 +47,15 @@ ex) `CPU 스케줄링.md`
 ### File - 면접 내용 정리
 ```md
 ## 이름1 - Heading2
-> **면접 질문** - Toggle(Bold)
-면접 답변1
+> **면접 질문1** - Toggle(Bold)
+  면접 답변1
 
 > **면접 질문2**
- 면접 답변2
+  면접 답변2
 ---
 ## 이름2 - Heading2
-> **면접 질문** - Toggle(Bold)
-면접 답변1
+> **면접 질문1** - Toggle(Bold)
+  면접 답변1
 ```
 
 ### Commit
