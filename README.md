@@ -61,7 +61,7 @@ ex) `CPU 스케줄링.md`
 ### Commit
 `작성자 이름: n주차 학습주제`
 
-ex) `신예지: 1주차 CPU 스케줄링`
+ex) `신예지: 1-1주차 CPU 스케줄링`
 
 ## 🐈‍⬛ 참고한 깃허브
 🔗 [CS-Study](https://github.com/jmxx219/CS-Study)
