@@ -29,7 +29,7 @@
 | 7 | 시스템 콜(System Call) | 데이터베이스 락(Locking) & 동시성 제어 | REST API & RESTful |  |  |
 | 8 | 동기화(세마포어 & 뮤텍스) | DB Connection Pool | SOP & CORS |  |  |
 | 9 | 데드락(Deadlock) | Redis | 프록시 서버와 VPN |  |  |
-| 10 | IPC(Inter Process Communication) | XSS & CSRF |  |  |  |
+| 10 | IPC(Inter Process Communication) | XSS & CSRF | - |  |  |
 
 ## ✅ 진행 상황
 | 주차(날짜) | 학습 주제 | 작성자 |
@@ -47,15 +47,27 @@ ex) `CPU 스케줄링.md`
 ### File - 면접 내용 정리
 ```md
 ## 이름1 - Heading2
-> **면접 질문1** - Toggle(Bold)
-  면접 답변1
+<details>
+<summary><b>면접 질문1</b></summary> - Toggle(Bold)
+<div markdown="1">
+면접 답변1
+</div>
+</details>
 
-> **면접 질문2**
-  면접 답변2
+<details>
+<summary><b>면접 질문2</b></summary> - Toggle(Bold)
+<div markdown="1">
+면접 답변2
+</div>
+</details>
 ---
 ## 이름2 - Heading2
-> **면접 질문1** - Toggle(Bold)
-  면접 답변1
+<details>
+<summary><b>면접 질문1</b></summary> - Toggle(Bold)
+<div markdown="1">
+면접 답변1
+</div>
+</details>
 ```
 
 ### Commit
