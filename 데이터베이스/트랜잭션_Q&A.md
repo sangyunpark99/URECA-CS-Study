@@ -16,13 +16,13 @@
 <summary><strong>트리거가 뭔가요?</summary>
 <div markdown="1">
 
-  - 트리거란, 트랜잭션의 성질 중 일관성을 유지하기 위해 사용되는 명령어로, 데이터베이스에서 특정 이벤트가 발생했을 때 자동으로 실행되는 명령어입니다.
+- 트리거란, 트랜잭션의 성질 중 일관성을 유지하기 위해 사용되는 명령어로, 데이터베이스에서 특정 이벤트가 발생했을 때 자동으로 실행되는 명령어입니다.
   <br><br>
   <details>
     <summary>❓<꼬리 질문> 트리거의 예시를 하나만 들어보세요.</summary>
       <div markdown="1">
       쇼핑몰 주문 시스템
-
+    
     ```sql
     CREATE TRIGGER update_stock
     AFTER INSERT ON orders
@@ -31,10 +31,10 @@
     SET stock = stock - NEW.quantity
     WHERE product_id = NEW.product_id;
     ```
-  새로운 주문이 들어오면 products 테이블에서 자동으로 재고를 차감하는 트리거를 예시로 들 수 있습니다.
-  
-  해당 트리거가 존재한다면 주문이 들어왔을 때 자동적으로 재고 변경이 항상 함께 일어나 일관성이 유지됩니다.
-  </div>
+    새로운 주문이 들어오면 products 테이블에서 자동으로 재고를 차감하는 트리거를 예시로 들 수 있습니다.
+    
+    해당 트리거가 존재한다면 주문이 들어왔을 때 자동적으로 재고 변경이 항상 함께 일어나 일관성이 유지됩니다.
+    </div>
   </details>
 </div>
 </details>
