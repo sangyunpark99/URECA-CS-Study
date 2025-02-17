@@ -21,15 +21,15 @@
 | No. | 운영체제 | 데이터베이스 | 네트워크 | 자바 | 스프링 |
 |:---:|:------:|:--------:|:------:|:---:|:----:|
 | 1 | CPU 스케줄링 | 트랜잭션(Transaction), ACID 속성 | OSI 7계층 | 미정 | 미정(3/6부터) |
-| 2 | 프로세스 vs 스레드 | 트랜잭션 격리 수준(Isolation Level) | TCP & UDP, 3-way & 4-way handshake |  |  |
-| 3 | PCB, Context Switching | 인덱스(Index) | HTTP vs HTTPS, 대칭키 & 공개키 암호화 |  |  |
-| 4 | 메모리 관리(페이징 & 세그먼테이션) | SQL - JOIN | DNS와 웹 통신 흐름 |  |  |
-| 5 | 페이지 교체 알고리즘 | SQL Injection | 로드 밸런싱(Load Balancing) |  |  |
-| 6 | 인터럽트(Interrupt) | SQL vs NoSQL | 쿠키 vs 세션 |  |  |
-| 7 | 시스템 콜(System Call) | 데이터베이스 락(Locking) & 동시성 제어 | REST API & RESTful |  |  |
-| 8 | 동기화(세마포어 & 뮤텍스) | DB Connection Pool | SOP & CORS |  |  |
-| 9 | 데드락(Deadlock) | Redis | 프록시 서버와 VPN |  |  |
-| 10 | IPC(Inter Process Communication) | XSS & CSRF | - |  |  |
+| 2 | 프로세스 vs 스레드 | 트랜잭션 격리 수준(Isolation Level) | TCP & UDP |  |  |
+| 3 | PCB, Context Switching | 인덱스(Index) | 3-way & 4-way handshake |  |  |
+| 4 | 메모리 관리(페이징 & 세그먼테이션) | SQL - JOIN | HTTP vs HTTPS, 대칭키 & 공개키 암호화 |  |  |
+| 5 | 페이지 교체 알고리즘 | SQL Injection | DNS와 웹 통신 흐름 |  |  |
+| 6 | 인터럽트(Interrupt) | SQL vs NoSQL | 로드 밸런싱(Load Balancing) |  |  |
+| 7 | 시스템 콜(System Call) | 데이터베이스 락(Locking) & 동시성 제어 | 쿠키 vs 세션 |  |  |
+| 8 | 동기화(세마포어 & 뮤텍스) | DB Connection Pool | REST API & RESTful |  |  |
+| 9 | 데드락(Deadlock) | Redis | SOP & CORS |  |  |
+| 10 | IPC(Inter Process Communication) | XSS & CSRF | 프록시 서버와 VPN |  |  |
 
 ## ✅ 진행 상황
 | 주차(날짜) | 학습 주제 | 작성자 |
