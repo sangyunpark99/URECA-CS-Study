@@ -22,8 +22,8 @@
 |:---:|:------:|:--------:|:------:|:---:|:----:|
 | 1 | CPU 스케줄링 | 트랜잭션(Transaction), ACID 속성 | OSI 7계층 | 미정 | 미정(3/6부터) |
 | 2 | 프로세스 vs 스레드 | 트랜잭션 격리 수준(Isolation Level) | TCP & UDP |  |  |
-| 3 | PCB, Context Switching | 인덱스(Index) | 3-way & 4-way handshake |  |  |
-| 4 | 메모리 관리(페이징 & 세그먼테이션) | SQL - JOIN | HTTP vs HTTPS, 대칭키 & 공개키 암호화 |  |  |
+| 3 | PCB, Context Switching | 인덱스(Index) | HTTP vs HTTPS, 대칭키 & 공개키 암호화 |  |  |
+| 4 | 메모리 관리(페이징 & 세그먼테이션) | SQL - JOIN | 3-way & 4-way handshake |  |  |
 | 5 | 페이지 교체 알고리즘 | SQL Injection | DNS와 웹 통신 흐름 |  |  |
 | 6 | 인터럽트(Interrupt) | SQL vs NoSQL | 로드 밸런싱(Load Balancing) |  |  |
 | 7 | 시스템 콜(System Call) | 데이터베이스 락(Locking) & 동시성 제어 | 쿠키 vs 세션 |  |  |
