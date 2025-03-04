@@ -20,7 +20,7 @@
 
 | No. | 운영체제 | 데이터베이스 | 네트워크 | 자바 | 스프링 |
 |:---:|:------:|:--------:|:------:|:---:|:----:|
-| 1 | CPU 스케줄링 | 트랜잭션(Transaction), ACID 속성 | OSI 7계층 | 미정 | 미정(3/6부터) |
+| 1 | CPU 스케줄링 | 트랜잭션(Transaction), ACID 속성 | OSI 7계층 | 미정 | Servlet |
 | 2 | 프로세스 vs 스레드 | 트랜잭션 격리 수준(Isolation Level) | TCP & UDP |  |  |
 | 3 | PCB, Context Switching | 인덱스(Index) | HTTP vs HTTPS, 대칭키 & 공개키 암호화 |  |  |
 | 4 | 메모리 관리(페이징 & 세그먼테이션) | SQL - JOIN | 3-way & 4-way handshake |  |  |
@@ -42,6 +42,7 @@
 | 3-2주차(2025.02.20) | 트랜잭션 격리 수준 | 이소원 |
 | 4-1주차(2025.02.24) | PCB, Context Switching | 변하영 |
 | 4-2주차(2025.02.27) | HTTP vs HTTPS, 대칭키 & 공개키 암호화 | 신예지 |
+| 5-1주차(2025.03.04) | 3-way & 4-way handshake | 박상윤 |
 
 ## 📌 Convention
 ### File Name
@@ -55,16 +56,12 @@ ex) `CPU 스케줄링.md`
 ## 이름1 - Heading2
 <details>
 <summary><b>면접 질문1</b></summary> - Toggle(Bold)
-<div markdown="1">
 면접 답변1
-</div>
 </details>
 
 <details>
 <summary><b>면접 질문2</b></summary> - Toggle(Bold)
-<div markdown="1">
 면접 답변2
-</div>
 </details>
 
 ---
@@ -72,9 +69,7 @@ ex) `CPU 스케줄링.md`
 ## 이름2 - Heading2
 <details>
 <summary><b>면접 질문1</b></summary> - Toggle(Bold)
-<div markdown="1">
 면접 답변1
-</div>
 </details>
 ```
 
