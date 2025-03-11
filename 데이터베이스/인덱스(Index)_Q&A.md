@@ -1,4 +1,4 @@
-## 신예지
+## 신예지 
 
 <details>
 <summary><strong>인덱스를 사용하면 항상 성능이 좋을까요?</strong></summary>
