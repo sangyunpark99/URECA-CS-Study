@@ -24,7 +24,7 @@
 | 2 | 프로세스 vs 스레드 | 트랜잭션 격리 수준(Isolation Level) | TCP & UDP |  | Dispatcher Servlet |
 | 3 | PCB, Context Switching | 인덱스(Index) | HTTP vs HTTPS, 대칭키 & 공개키 암호화 |  |  |
 | 4 | 메모리 관리(페이징 & 세그먼테이션) | SQL - JOIN, SQL Injection | 3-way & 4-way handshake |  |  |
-| 5 | 페이지 교체 알고리즘 | SQL vs NoSQL | DNS와 웹 통신 흐름 |  |  |
+| 5 | 페이지 교체 알고리즘 | SQL vs NoSQL | DNS |  |  |
 | 6 | 인터럽트(Interrupt) | 데이터베이스 락(Locking) & 동시성 제어 | 로드 밸런싱(Load Balancing) |  |  |
 | 7 | 시스템 콜(System Call) | DB Connection Pool | 쿠키 vs 세션 |  |  |
 | 8 | 동기화(세마포어 & 뮤텍스) | Redis | REST API & RESTful |  |  |
@@ -46,8 +46,7 @@
 | 5-2주차(2025.03.06) | 인덱스 | 김수훈 |
 | 6-1주차(2025.03.10) | 메모리 관리(페이징 & 세그먼테이션), Servlet | 이소원, 변하영 |
 | 6-2주차(2025.03.13) | SQL - JOIN, SQL Injection | 신예지 |
-
-
+| 7-1주차(2025.03.17) | DNS, Dispatcher Servlet | 이소원, 박상윤 |
 
 ## 📌 Convention
 ### File Name
