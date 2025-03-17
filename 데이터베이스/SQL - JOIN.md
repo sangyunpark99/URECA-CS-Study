@@ -1,5 +1,5 @@
 # SQL - JOIN
-![SQL JOINS](image.png)
+![SQL JOINS](SQL-JOIN_image/image.png)
 
 ## 1. JOIN이란?
 ### JOIN의 개념
