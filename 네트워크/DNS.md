@@ -155,6 +155,28 @@ ex 2. mail.google.co.kr
 
 ## DNS 작동 방식
 
+![Image](https://github.com/user-attachments/assets/b2547c1e-1c2a-4e49-860d-d7cc46b57ada)
+
+0. DNS 서버로 DNS 쿼리를 보내기 전 (브라우저에 URL 입력 직후)
+   1. Local(hosts)
+     - 네트워크를 타기 전에 운영체제는 로컬(hosts 파일)에서 먼저 찾는다.
+     - DNS 검색 시, hosts 파일을 우선적으로 검색한다.
+       
+   2. DNS cache table
+      - hosts 파일에 정보가 없다면, 운영체제는 DNS 캐시 테이블에서 찾는다.
+        
+   3. Browser
+     - 최신 웹 브라우저는 기본적으로 정해진 시간 동안 DNS 레코드를 캐시하도록 설계되어 있다.
+     - DNS 레코드를 요청할 때 브라우저 캐시에서 처음으로 요청한 레코드를 확인하는 것을 말한다.
+     - Chome에서는 chrome://net-internals/#dns를 입력하면 DNS 캐시를 확인할 수 있다.
+       
+   4. DNS Server
+      - 이후에도 ip 정보를 못찾았다면, 운영체제는 로컬 DNS 서버로 질의를 요청한다.
+
+1. 클라이언트 -> 로컬 DNS 서버
+  - 클라이언트(pc, 스마트폰 등)가 
+  
+   
 <br>
 
 ## DNS Query
