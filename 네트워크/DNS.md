@@ -174,20 +174,89 @@ ex 2. mail.google.co.kr
       - 이후에도 ip 정보를 못찾았다면, 운영체제는 로컬 DNS 서버로 질의를 요청한다.
 
 1. 클라이언트 -> 로컬 DNS 서버
-  - 클라이언트(pc, 스마트폰 등)가 ```google.com```의 ip 주소를 찾으려고 로컬 DNS tjqj(ISP제공)에 요청을 보낸다.
-  - 만약 로컬 DNS 서버에 캐시된 ㅑ
-  
+  - 클라이언트(pc, 스마트폰 등)가 ```google.com```의 ip 주소를 찾으려고 로컬 DNS 서버(ISP제공)에 요청을 보낸다.
+  - 만약 로컬 DNS 서버에 캐시된 ip주소가 있다면 바로 클라이언트에게 ip주소를 반환하고 끝
+  - 없으면 next
+
+2. 로컬 DNS 서버 -> 루트 DNS 서버
+  - 캐시에 없으면, 로컬 DNS 서버가 루트 DNS 서버에 ```google.com```의 ip 주소를 알려달라는 요청을 보낸다.
+  - 루트 DNS 서버는 "나는 모르지만, .com을 관리하는 TLD DNS 서버 주소는 여기 있어"하고 알려준다.
+
+3. 로컬 DNS 서버 -> TLD DNS 서버
+   - 로컬 DNS 서버가 .com을 관리하는 TLD DNS 서버(com 네임 서버)에 요청을 보낸다.
+   - TLD DNS 서버는 ``google.com``을 관리하는 Authoritative DNS 서버 주소를 반환한다.
+     
+4. 로컬 DNS 서버 -> Authoritative DNS 서버
+   - 로컬 DNS 서버가 ``google.com``을 관리하는 Authoritative DNS 서버에 요청을 보낸다.
+   - Authoritative DNS 서버는 실제 ``google.com`` 도메인의 ip주소를 알고 있다.
+
+5. Authoritative DNS 서버 -> 로컬 DNS 서버
+   - Authoritative DNS 서버가 ex.```google.com```의 IP 주소가 ```142.250.74.78```라는 것을 알려준다.
+     
+6. 로컬 DNS 서버 -> 클라이언트
+  - 로컬 DNS 서버가 받은 ```142.250.74.78``` ip 주소를 클라이언트에게 전달한다.
+     
+7. 클라이언트 -> 웹 서버
+   - 클라이언트는 받은 ip 주소(```142.250.74.78```)로 실제 Google 웹 서버에 접속해서 원하는 페이지를 가져온다.
    
 <br>
 
 ## DNS Query
+- 사용자가 도메인을 입력하고 ip주소를 얻기 위해 DNS 서버에 보내는 요청을 뜻한다.
+- DNS 클라이언트와 DNS 서버는 DNS 쿼리를 교환한다.
+- DNS 쿼리는 Recursive(재귀적) 또는 Iterative(반복적)으로 구분한다.
+
+1. Recursive Query (재귀적 질의)
+   - 결과물(ip) 주소를 돌려주는 작업
+   - Recursive 서버는 Recursive 쿼리를 클라이언트에게 돌려주는 역할
+     - Recursive 쿼리를 받은 Recursive 서버(Resolver)는 권한 있는 네임 서버로 Iterative 쿼리를 보내서 ip주소를 찾고 결과를 반환한다.
+2. Iterative Query (반복적 질의)
+   - Recursive DNS 서버가 다른 DNS 서버에게 쿼리를 보내어 응답을 요청하는 작업
+   - Recursive 서버가 권한 있는 네임 서버들에게 반복적으로 쿼리를 보내서 IP 주소를 찾는다.
+   - 만약 Recursive 서버에 이미 IP 주소가 캐시 되어있다면 해당 과정은 건너뛴다.
 
 <br>
 
 ## DNS 레코드
 
+도메인 이름에 대한 IP 주소 매핑 정보를 구성하고 제어할 수 있는 DNS 데이터베이스에 저장된 특정 리소스 레코드
+
+- (Name, Value, Type, TTL) 형식으로 구성되어 있음
+- TTL(Time To Live) 옵션값: DNS 서버나 사용자 PC의 캐시(메모리)에 저장되는 시간
+
+레코드 종류(Type에 따라 나눠진다.)
+
+| 레코드 | Name               | Value                | Type  | TTL  |
+|--------|--------------------|----------------------|------|------|
+| A      | example.com        | 100.100.123.1       | A    | 14400 |
+| AAAA   | example.com        | 0000:8a2e:0370:7334 | AAAA | 14400 |
+| CNAME  | hello.example.com  | example.com         | CNAME | 14400 |
+| NS     | .com               | dns.com             | NS   | 14400 |
+
+- A 레코드
+  - DNS에 저장되는 정보의 타입으로 도메인 주소와 서버의 IP 주소가 직접 매핑시키는 방법
+  - A는 Address를 나타내며, Name은 도메인 이름, Value는 해당 도메인의 IPv4 주소를 나타냄
+- AAAA 레코드
+  - Type A의 IPv6 버전으로, IPv6의 주소를 매핑함
+- CNAME 레코드
+  - 어떤 도메인이 다른 도메인의 별칭(alias)인 경우 CNAME 타입 레코드가 사용됨
+  - 도메인 주소를 또 다른 도메인 주소로 이중 매핑 시키는 형태
+- NS 레코드
+  - 네임 서버 레코드로 도메인에 대한 네임서버의 권한을 누가 관리하고 있는지 알려주는 레코드
+  - 어떤 도메인에 대한 처리를 다른 도메인 네임 서버에게 위임하는 기능을 가짐
+- 기타 등등
+
 <br>
 
 ## DNS 캐싱
 
-<br>
+DNS 캐싱은 요청하는 클라이언트와 가까운 곳에 데이터를 저장함으로써 DNS 쿼리를 조기에 확인할 수 있고, DNS 조회 체인의 추가 쿼리를 줄이기 위해 사용한다.
+
+- 브라우저 DNS 캐싱
+  - 최신 웹 브라우저는 기본적으로 정해진 시간 동안 DNS 레코드를 캐시하도록 설계되었다.
+  - DNS 레코드를 요청할 때 브라우저 캐시에서 처음으로 요청한 레코드를 확인하는 것을 말한다.
+  - Chome에서는 chrome://net-internals/#dns를 입력하면 DNS 캐시를 확인할 수 있다.
+    
+- 운영 체제(OS) 수준 DNS 캐싱
+  - 운영체제의 메모리에 DNS 레코드를 캐시할 수 있다.
+  - hosts 파일을 통해 DNS 레코드를 캐시할 수 있다.
