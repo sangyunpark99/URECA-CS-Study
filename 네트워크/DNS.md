@@ -174,26 +174,26 @@ ex 2. mail.google.co.kr
       - 이후에도 ip 정보를 못찾았다면, 운영체제는 로컬 DNS 서버로 질의를 요청한다.
 
 1. 클라이언트 -> 로컬 DNS 서버
-  - 클라이언트(pc, 스마트폰 등)가 ```google.com```의 ip 주소를 찾으려고 로컬 DNS 서버(ISP제공)에 요청을 보낸다.
-  - 만약 로컬 DNS 서버에 캐시된 ip주소가 있다면 바로 클라이언트에게 ip주소를 반환하고 끝
-  - 없으면 next
+   - 클라이언트(pc, 스마트폰 등)가 ```google.com```의 ip 주소를 찾으려고 로컬 DNS 서버(ISP제공)에 요청을 보낸다.
+   - 만약 로컬 DNS 서버에 캐시된 ip주소가 있다면 바로 클라이언트에게 ip주소를 반환하고 끝
+   - 없으면 next
 
 2. 로컬 DNS 서버 -> 루트 DNS 서버
-  - 캐시에 없으면, 로컬 DNS 서버가 루트 DNS 서버에 ```google.com```의 ip 주소를 알려달라는 요청을 보낸다.
-  - 루트 DNS 서버는 "나는 모르지만, .com을 관리하는 TLD DNS 서버 주소는 여기 있어"하고 알려준다.
+   - 캐시에 없으면, 로컬 DNS 서버가 루트 DNS 서버에 ```google.com```의 ip 주소를 알려달라는 요청을 보낸다.
+   - 루트 DNS 서버는 "나는 모르지만, .com을 관리하는 TLD DNS 서버 주소는 여기 있어"하고 알려준다.
 
 3. 로컬 DNS 서버 -> TLD DNS 서버
    - 로컬 DNS 서버가 .com을 관리하는 TLD DNS 서버(com 네임 서버)에 요청을 보낸다.
    - TLD DNS 서버는 ``google.com``을 관리하는 Authoritative DNS 서버 주소를 반환한다.
      
-4. 로컬 DNS 서버 -> Authoritative DNS 서버
+5. 로컬 DNS 서버 -> Authoritative DNS 서버
    - 로컬 DNS 서버가 ``google.com``을 관리하는 Authoritative DNS 서버에 요청을 보낸다.
    - Authoritative DNS 서버는 실제 ``google.com`` 도메인의 ip주소를 알고 있다.
 
-5. Authoritative DNS 서버 -> 로컬 DNS 서버
+6. Authoritative DNS 서버 -> 로컬 DNS 서버
    - Authoritative DNS 서버가 ex.```google.com```의 IP 주소가 ```142.250.74.78```라는 것을 알려준다.
      
-6. 로컬 DNS 서버 -> 클라이언트
+7. 로컬 DNS 서버 -> 클라이언트
   - 로컬 DNS 서버가 받은 ```142.250.74.78``` ip 주소를 클라이언트에게 전달한다.
      
 7. 클라이언트 -> 웹 서버
