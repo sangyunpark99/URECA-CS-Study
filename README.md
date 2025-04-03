@@ -24,7 +24,7 @@
 | 2 | 프로세스 vs 스레드 | 트랜잭션 격리 수준(Isolation Level) | TCP & UDP |  | Dispatcher Servlet |
 | 3 | PCB, Context Switching | 인덱스(Index) | HTTP vs HTTPS, 대칭키 & 공개키 암호화 |  | Tomcat |
 | 4 | 메모리 관리(페이징 & 세그먼테이션) | SQL - JOIN, SQL Injection | 3-way & 4-way handshake |  | Servlet Filter와 Spring Interceptor |
-| 5 | 페이지 교체 알고리즘 | SQL vs NoSQL | DNS |  |  |
+| 5 | 페이지 교체 알고리즘 | SQL vs NoSQL | DNS |  | DTO, DAO, VO, Entity |
 | 6 | 인터럽트(Interrupt) | 데이터베이스 락(Locking) & 동시성 제어 | 로드 밸런싱(Load Balancing) |  |  |
 | 7 | 시스템 콜(System Call) | DB Connection Pool | 쿠키 vs 세션 |  |  |
 | 8 | 동기화(세마포어 & 뮤텍스) | Redis | REST API & RESTful |  |  |
@@ -50,6 +50,7 @@
 | 7-2주차(2025.03.20) | 페이지 교체 알고리즘 | 김수훈 |
 | 8-1주차(2025.03.24) | SQL vs NoSQL, Tomcat | 신예지, 변하영 |
 | 9-1주차(2025.04.01) | 로드 밸런싱(Load Balancing), Servlet Filter와 Spring Interceptor | 김수훈, 박상윤 |
+| 9-2주차(2025.04.03) | 인터럽트(Interrupt) | 변하영 |
 
 ## 📌 Convention
 ### File Name
