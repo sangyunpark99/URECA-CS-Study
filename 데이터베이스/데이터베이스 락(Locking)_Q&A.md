@@ -154,122 +154,123 @@ DB의 구조적 변경, 백업 수행 또는 크리티컬한 데이터 마이그
 
 ## 신예지
 <details>
-<summary><b>  </b></summary>
+<summary><b>Global Lock과 Backup Lock의 차이를 설명해주세요</b></summary>
 <div markdown="1">
   <br>
+
+  - Global Lock은 모든 테이블에 대한 읽기 전용 락, 거의 모든 DML/DDL 막힘
+  - Backup Lock은 DDL만 막고 DML 허용, InnoDB 백업용
    
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>Intention Exclusive Lock과 Shared Lock을 동시에 걸 수 있나요?</b></summary>
 <div markdown="1">
   <br>
-   
+
+  락을 걸 수 없음
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>Escalation에 대해 설명해주세요</b></summary>
 <div markdown="1">
   <br>
-   
+
+  잠금 수준을 최적화하기 위해 데이터베이스 시스템이 특정 Lock Level에서 다른 Lock Level로 전환하는 과정을 의미
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>Lock level이 낮아질수록 동시성과 메모리 효율성은 어떻게 될까요?</b></summary>
 <div markdown="1">
   <br>
-   
+
+   Lock 레벨이 낮을 수록 동시성은 좋아지지만, 관리해야할 Lock 이 많아지기 때문에 메모리 효율성은 떨어짐
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>Blocking의 해결방안을 말해주세요</b></summary>
 <div markdown="1">
   <br>
-   
+
+   1. SQL문의 리펙토링
+   2. 트랜잭션을 가능한 짧게 정의
+   3. 동일한 데이터를 동시에 변경하는 작업을 하지 않도록 설계
+   4. 대용량 작업이 불가피한 경우, 작업 단위를 쪼개거나 lock_timeout을 설정
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>데이터베이스 수준 잠금은 보통 언제 일어나나요?</b></summary>
 <div markdown="1">
   <br>
+
+  데이터베이스를 복구하거나 스키마를 변경할 때 발생한다.
    
+</div>
+</details>
+
+<br>
+
+## 이소원
+<details>
+<summary><b>(o, x) Intention lock은 table lock 이다.</b></summary>
+<div markdown="1">
+  <br>
+   (o)
+  
+  Intention Lock은 table Lock 입니다.
+  트랜잭션이 특정 테이블의 어떤 행에 락을 걸려고 하니 알아두라는 선언적 의미로 사용됩니다.
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>S Lock 과 X Lock의 차이를 설명해주세요.</b></summary>
 <div markdown="1">
   <br>
-   
+
+  1. S Lock
+     - Shared Lock
+     - 데이터를 읽을 때 사용하는 Lock
+     - 하나의 트랜잭션이 데이터를 읽고 있는 경우, 다른 트랜잭션들도 해당 데이터를 읽을 수는 있지만 쓰기 작업은 금지됩니다.
+     - 데이터의 일관성을 유지할 수 있습니다.
+     - 트랜잭션 격리 수준 중 Repeatable Read 단계와 연관
+  2. X Lock
+     - Exclusive Lock
+     - 데이터를 변경하고자 할 때 사용됩니다.
+     - 트랜잭션이 완료될 때까지 유지됩니다.
+     - 특정 트랜재겻ㄴ이 update, delete 등을 통해 데이터를 수정하고 있는 경우, 다른 모든 트랜잭션의 접근이 금지됩니다.
+     - 트랜잭션 격리 수준 중 Serializable 단계와 연관
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>row-level 및 table-level 에서 두 번 Lock 을 하는 이유는?</b></summary>
 <div markdown="1">
   <br>
-   
+
+   A 트랜잭션에서 이미 테이블에 대해 락이 걸려있는데, B 트랜잭션에서 해당 테이블의 특정 row에 대한 lock을 거는 것을 원천적으로 방지할 수 있습니다. (반대의 경우도 마찬가지)
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>Dead Lock이 발생하면 어떻게 해결할 수 있을까요?</b></summary>
 <div markdown="1">
   <br>
-   
+
+   1. Dead Lock이 감지되면 둘 중 하나의 트랜잭션을 강제 종료 합니다.
+   2. 접근 순서 규칙을 정합니다.
 </div>
 </details>
 
 <details>
-<summary><b>  </b></summary>
+<summary><b>읽기 위주, 충돌이 드문 시스템에서는 어떤 락을 사용해야 할까요?</b></summary>
 <div markdown="1">
   <br>
-   
+
+   Pessimistic Lock
 </div>
 </details>
-
-<details>
-<summary><b>  </b></summary>
-<div markdown="1">
-  <br>
-   
-</div>
-</details>
-
-<details>
-<summary><b>  </b></summary>
-<div markdown="1">
-  <br>
-   
-</div>
-</details>
-
-<details>
-<summary><b>  </b></summary>
-<div markdown="1">
-  <br>
-   
-</div>
-</details>
-
-<details>
-<summary><b>  </b></summary>
-<div markdown="1">
-  <br>
-   
-</div>
-</details>
-
-<details>
-<summary><b>  </b></summary>
-<div markdown="1">
-  <br>
-   
-</div>
-</details>
-
